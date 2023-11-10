@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:32:29 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/10 09:51:10 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/10 12:23:47 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/10 12:26:46 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-#include <string.h>
-#include <stdlib.h>
-
-size_t ft_strlen(const char *s);
-
-#endif
+void	ft_putnbr_fd(int n, int fd)
+{
+	write(fd, &n, 1);
+}

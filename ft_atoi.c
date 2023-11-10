@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:31:59 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/09 11:03:56 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/09 11:05:02 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/09 11:24:09 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *s)
 {
 	int	i;
-	int	y;
-	char	*pt;
-	char	*pt1;
+	int	result;
+	int	var;
 
 	i = 0;
-	y = 0;
-	pt = (char *)s1;
-	if (s2[i] == '\0')
-		return (pt);
-	while (i < n)
+	result = 0;
+	var = 1;
+	while (s[i] == ' ')
+		i++;
+	if (s[i] == '-')
+		var *= -1;
+	i++;
+	while (s[i] >= 48 && s[i] <= 57)
 	{
-		while (s1[i + y] == s2[y] && (s1[i + y] != '\0'))
-		{
-			y++;
-			if (s2[y] == '\0')
-				return (pt + i);
-		}
-		y = 0;
+		result = result * 10;
+		result = result + (s[i] - 48);
 		i++;
 	}
-	pt = NULL;
-	return (pt);
+	return (result * var);
 }
 /*
 int	main(void)
 {
-	char	s1[] = "Salut";
-	char	s2[] = "zz";
-	char	*pt;
+	char	*s = "       -14 562";
 
-	printf("%s", ft_strnstr(s1, s2, 5));
-	return (0);	
+	printf("%d\n", ft_atoi(s));
+	printf("%d", atoi(s));
+	return (0);
 }*/

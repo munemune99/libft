@@ -1,50 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:31:59 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/09 11:03:56 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/10 09:26:09 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/10 10:20:30 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(const char *s)
 {
+	char	*s2;
 	int	i;
-	int	y;
-	char	*pt;
-	char	*pt1;
-
+	size_t	len;
+	
 	i = 0;
-	y = 0;
-	pt = (char *)s1;
-	if (s2[i] == '\0')
-		return (pt);
-	while (i < n)
+	len = ft_strlen(s);
+	s2 = malloc (sizeof(char) * len);
+	if (s2 == NULL)
+		return (0);
+	while (i < len)
 	{
-		while (s1[i + y] == s2[y] && (s1[i + y] != '\0'))
-		{
-			y++;
-			if (s2[y] == '\0')
-				return (pt + i);
-		}
-		y = 0;
+		s2[i] = s[i];
 		i++;
 	}
-	pt = NULL;
-	return (pt);
+	s2[i] = '\0';
+	return (s2);
 }
 /*
 int	main(void)
 {
-	char	s1[] = "Salut";
-	char	s2[] = "zz";
-	char	*pt;
-
-	printf("%s", ft_strnstr(s1, s2, 5));
-	return (0);	
+	const char *s = "Salut gars";
+	printf("%s", ft_strdup(s));
+	printf("%s", strdup(s));
+	return (0);
 }*/
