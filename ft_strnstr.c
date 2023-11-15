@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:31:59 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/09 11:03:56 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:16:02 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	y;
+	size_t	i;
+	size_t	y;
 	char	*pt;
-	char	*pt1;
 
 	i = 0;
 	y = 0;

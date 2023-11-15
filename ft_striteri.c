@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:23:19 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/13 17:49:36 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/12 14:37:07 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/14 13:49:55 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+/*
+void	ft_stars(unsigned int i, char *s)
 {
-	size_t	i;
-	char	*a;
-	char	*b;
+	s[i] = '*';
+}*/
 
-	a = (char *)s1;
-	b = (char *)s2;
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+	size_t	n;
+
 	i = 0;
-	while (i < n)
+	n = ft_strlen(s);
+	while (s[i] != '\0' && i < (unsigned int)n)
 	{
-		if (a[i] != b[i])
-		{
-			return ((unsigned char)a[i] - (unsigned char)b[i]);
-		}
+		f(i, s);
 		i++;
 	}
-	return (0);
 }
 /*
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	str[] = "Salut gars";
-	char	str1[] = "Salut gars";
-
-	printf("%d\n", memcmp(str, str1, 12));
-	printf("%d", ft_memcmp(str, str1, 12));
+	ft_striteri("SALUT GARS !", c_to_star);
 	return (0);
 }*/

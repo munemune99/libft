@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:50:11 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/10 11:05:50 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:08:33 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;
 	size_t	len2;
-	int	i;
-	int	y;
+	size_t	i;
+	size_t	y;
 	char	*str;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:33:34 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/10 16:39:34 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:24:55 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_intlen(int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 		i++;
 	while (n != 0)
@@ -60,12 +62,15 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int	len;
-	int	mod;
 
 	len = ft_intlen(n);
 	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
 	str[len] = '\0';
 	len--;
+	if (n == 0)
+		str[0] = '0';
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -75,12 +80,12 @@ char	*ft_itoa(int n)
 		str = ft_is_positive(str, n, len);
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	int	n;
 
 	n = 2147483647;
-	printf("%s\n", ft_itoa(n));
+	printf("%s\n", ft_itoa(-2147483647LL));
 	return (0);
-}
+}*/

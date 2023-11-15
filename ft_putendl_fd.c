@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:20:22 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/10 12:23:15 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:04:26 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_putendl_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
-	write (fd, '\n', 1);
+	write (fd, "\n", 1);
 }

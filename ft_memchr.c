@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:37:54 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/08 15:08:49 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:03:48 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*pt;
 	char	*str;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	str = (char *)s;

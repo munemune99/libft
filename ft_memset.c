@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:50:10 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:14:22 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:58:25 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	int	i;
+	size_t	i;
 
 	str = s;
 	i = 0;

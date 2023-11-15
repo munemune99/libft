@@ -6,28 +6,21 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:19:14 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/08 12:40:10 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:22:20 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*pt;
 	int	i;
-
+	while (c > 127)
+		c -= 128;
 	i = ft_strlen(s);
-	while (i != 0)
+	while (i >= 0)
 	{
 		if (s[i] == c)
 		{

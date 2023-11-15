@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:06:32 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/10 15:36:53 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:57:19 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[y] = '\0';
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char	*s1 = "Saluet";
@@ -76,4 +76,4 @@ int	main(void)
 
 	printf("%s", ft_strtrim(s1, set));
 	return (0);
-}
+}*/
