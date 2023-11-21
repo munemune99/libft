@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:50:10 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/17 15:23:59 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/09 11:05:02 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/13 16:41:06 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char	*str;
-	size_t			i;
+	t_list	*elem;
+	t_list	*point;
+	t_list	*temp;
 
-	str = s;
-	i = 0;
-	while (i < n)
+	if (lst == NULL)
+		return (NULL);
+	elem = NULL;
+	while (lst != NULL)
 	{
-		str[i] = c;
-		i++;
+		temp = (f(lst->content));
+		point = ft_lstnew(temp);
+		if (point == NULL)
+		{
+			ft_lstclear(&elem, del);
+			del(temp);
+			free(point);
+			return (NULL);
+		}
+		ft_lstadd_back(&elem, point);
+		lst = lst->next;
 	}
-	return (s);
+	return (elem);
 }
-/*
-int	main(void)
-{
-	char	buffer[10];
-	
-	printf("%p\n", ft_memset(buffer, 8, 4));
-	printf("%p", memset(buffer, 8, 4));
-	return (0);
-}*/

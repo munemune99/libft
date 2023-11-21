@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:50:10 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/17 15:23:59 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/06 15:59:06 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/17 15:04:15 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = c;
-		i++;
-	}
-	return (s);
+	if (lst == NULL)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	lst->next = NULL;
+	return (lst);
 }
-/*
-int	main(void)
-{
-	char	buffer[10];
-	
-	printf("%p\n", ft_memset(buffer, 8, 4));
-	printf("%p", memset(buffer, 8, 4));
-	return (0);
-}*/

@@ -6,13 +6,13 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:59:06 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:13:25 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:04:15 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

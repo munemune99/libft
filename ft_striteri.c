@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:37:07 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/14 13:49:55 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:47:27 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	ft_stars(unsigned int i, char *s)
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	size_t	n;
+	size_t			n;
 
 	i = 0;
 	n = ft_strlen(s);
-	while (s[i] != '\0' && i < (unsigned int)n)
+	while (s[i] != '\0' && i < n)
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
 	}
 }

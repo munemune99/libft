@@ -6,13 +6,13 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:33:34 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/13 11:24:55 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:44:58 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	ft_intlen(int n)
 	return (i);
 }
 
-char	*ft_is_negative(char *str, int n, int len)
+static char	*ft_is_negative(char *str, int n, int len)
 {
 	int	mod;
 
@@ -43,25 +43,24 @@ char	*ft_is_negative(char *str, int n, int len)
 	return (str);
 }
 
-char    *ft_is_positive (char *str, int n, int len)
+static char	*ft_is_positive(char *str, int n, int len)
 {
-        int     mod;
+	int	mod;
 
-        while (n > 0)
-        {
-                mod = n % 10;
-                n = n / 10;
-                str[len] = mod + '0';
-                len--;
-        }
-        return (str);
+	while (n > 0)
+	{
+		mod = n % 10;
+		n = n / 10;
+		str[len] = mod + '0';
+		len--;
+	}
+	return (str);
 }
-
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	len;
+	int		len;
 
 	len = ft_intlen(n);
 	str = malloc(sizeof(char) * (len + 1));
@@ -81,11 +80,13 @@ char	*ft_itoa(int n)
 	return (str);
 }
 /*
-int	main(void)
-{
-	int	n;
+   int	main(void)
+   {
+   int	n;
 
-	n = 2147483647;
-	printf("%s\n", ft_itoa(-2147483647LL));
-	return (0);
-}*/
+   n = 2147483647;
+   printf("%s\n", ft_itoa(19));
+   printf("%s\n", ft_itoa(-2147483647LL));
+   printf("%s\n", ft_itoa(-0));
+   return (0);
+   }*/

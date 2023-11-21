@@ -1,8 +1,10 @@
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
+
+INC = libft.h
 
 SRCS =	ft_atoi.c \
 	ft_isdigit.c \
@@ -39,12 +41,30 @@ SRCS =	ft_atoi.c \
 	ft_strrchr.c \
 	ft_split.c
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+
 OFILES = $(SRCS:.c=.o)
 
-all: $(NAME) 
+1FILES = $(BONUS:.c=.o)
 
-$(NAME): $(OFILES)
-	ar -rcs $(NAME) $(OFILES) 
+%.o: %.c $(INC)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OFILES) $(INC)
+	ar -rcs $(NAME) $(OFILES)
+
+bonus: $(INC) $(1FILES)
+	ar -rcs $(NAME) $(0FILES) $(1FILES)
 
 clean:
 	rm -f $(OFILES) $(1FILES)

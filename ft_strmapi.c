@@ -6,7 +6,7 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:20:50 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/13 15:52:09 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:52:28 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	c_to_a(unsigned int i, char c)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*str;
 
 	i = 0;

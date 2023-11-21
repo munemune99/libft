@@ -6,12 +6,12 @@
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:22:05 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/15 16:58:32 by jfrancoi         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:47:17 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+
 /*char	*ft_nextword(char *s, char c, int i)
 {
 	if (i != 0 && s[i] != c)
@@ -21,7 +21,7 @@
 	return (&s[i]);
 }*/
 
-void	ft_freemalloc(char **tab, int n)
+static void	ft_freemalloc(char **tab, int n)
 {
 	while (n >= 0)
 	{
@@ -31,7 +31,7 @@ void	ft_freemalloc(char **tab, int n)
 	free(tab);
 }
 
-int	ft_strlength(char *s, char c)
+static int	ft_strlength(char *s, char c)
 {
 	int	x;
 
@@ -45,7 +45,7 @@ int	ft_strlength(char *s, char c)
 	return (x);
 }
 
-int	count_words(char *s, char c)
+static int	count_words(char *s, char c)
 {
 	int	i;
 	int	count;
@@ -73,19 +73,19 @@ int	count_words(char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
-	int	i;
+	char		**tab;
+	int			i;
 	const int	j = count_words((char *)s, c);
 
 	i = 0;
-	tab = ft_calloc(sizeof(char*), (j + 1));
+	tab = ft_calloc(sizeof(char *), (j + 1));
 	if (!tab)
 		return (NULL);
 	while (i < j)
 	{
 		while (*s == c)
 			s++;
-		tab[i] = ft_substr(s,0,ft_strlength((char*)s, c));
+		tab[i] = ft_substr(s, 0, ft_strlength((char *)s, c));
 		if (!tab[i])
 		{
 			ft_freemalloc(tab, i);
@@ -115,5 +115,5 @@ int	main(void)
 	}
 	free (tab);
 	return (0);
-}*/
-
+}
+*/
