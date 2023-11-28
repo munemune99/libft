@@ -26,12 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-int	main(void)
-{
-	char	buffer[10];
-	
-	printf("%p\n", ft_memset(buffer, 8, 4));
-	printf("%p", memset(buffer, 8, 4));
-	return (0);
-}*/

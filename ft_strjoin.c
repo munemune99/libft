@@ -14,38 +14,27 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
 	size_t	i;
 	size_t	y;
 	char	*str;
 
 	i = 0;
 	y = 0;
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = malloc (sizeof(char) * (len1 + len2 + 1));
-	if (str == NULL)
-		return (0);
-	while (i < len1)
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	if (s1 == NULL)
+		return (ft_strdup(s2));
+	if (s2 == NULL)
+		return (ft_strdup(s1));
+	str = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (NULL);
+	while (i < ft_strlen(s1))
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (y < len2 + 1)
-	{
-		str[i] = s2[y];
-		i++;
-		y++;
-	}
+	while (y < ft_strlen(s2) + 1)
+		str[i++] = s2[y++];
 	return (str);
 }
-/*
-int	main(void)
-{
-	char const *s1 = "salut ";
-	char const *s2 = "gars !";
-
-	printf("%s\n", ft_strjoin(s1, s2));
-	return (0);
-}*/

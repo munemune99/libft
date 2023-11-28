@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 14:37:07 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/17 14:47:27 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/09 11:05:02 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/25 13:39:34 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	ft_stars(unsigned int i, char *s)
-{
-	s[i] = '*';
-}*/
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	size_t			n;
+	t_list	*elem;
+	t_list	*point;
+	t_list	*temp;
 
-	i = 0;
-	n = ft_strlen(s);
-	while (s[i] != '\0' && i < n)
+	if (lst == NULL || f == NULL || del == NULL)
+		return (NULL);
+	elem = NULL;
+	while (lst != NULL)
 	{
-		f(i, &s[i]);
-		i++;
+		temp = (f(lst->content));
+		point = ft_lstnew(temp);
+		if (point == NULL)
+		{
+			ft_lstclear(&elem, del);
+			del(temp);
+			return (NULL);
+		}
+		ft_lstadd_back(&elem, point);
+		lst = lst->next;
 	}
+	return (elem);
 }

@@ -38,11 +38,3 @@ void	*ft_memmove(void *dest, const void *source, size_t n)
 	}
 	return (s1);
 }
-/*
-int	main(void)
-{
-	char	str[9] = "aabbcc";
-	printf( "The string: %s\n", str );
-	memmove(str + 1 ,str ,3 );
-  	printf( "New string: %s\n", str );
-}*/

@@ -38,13 +38,3 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	}
 	return (NULL);
 }
-/*
-   int	main(void)
-   {
-   char	s1[] = "Salut";
-   char	s2[] = "zz";
-   char	*pt;
-
-   printf("%s", ft_strnstr(s1, s2, 5));
-   return (0);	
-   }*/

@@ -32,11 +32,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	dest[i] = '\0';
 	return (len + ft_strlen(src));
 }
-/*
-int	main(void)
-{
-	char dest[] = "une pas deux";
-	//printf("%zu", strlcat(dest, " gars", 5));
-	printf("%zu",ft_strlcat(dest, " gars", 5));
-	return (0);
-}*/

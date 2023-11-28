@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*pt;
-	int		i;
+	char		*pt;
+	size_t		i;
 
 	while (c > 127)
 		c -= 128;
@@ -27,15 +27,9 @@ char	*ft_strrchr(const char *s, int c)
 			pt = (char *)&s[i];
 			return (pt);
 		}
+		if (i == 0)
+			return (NULL);
 		i--;
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	const char	str[] = "salut gars";
-	printf("%s\n", ft_strrchr(str, 'z'));
-	printf("%s", strrchr(str, 'z'));
-	return (0);
-}*/

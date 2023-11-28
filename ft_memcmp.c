@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -32,13 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	char	str[] = "Salut gars";
-	char	str1[] = "Salut gars";
-
-	printf("%d\n", memcmp(str, str1, 12));
-	printf("%d", ft_memcmp(str, str1, 12));
-	return (0);
-}*/

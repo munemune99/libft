@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*pt;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (c > 127)
@@ -37,12 +37,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	const char str[] = "une pas deux";
-
-	printf("%s\n",ft_strchr(str, 'e'));
-	printf("%s",strchr(str, 'e'));
-	return (0);
-}*/

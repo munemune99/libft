@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 14:37:07 by jfrancoi          #+#    #+#             */
-/*   Updated: 2023/11/17 14:47:27 by jfrancoi         ###   ########.fr       */
+/*   Created: 2023/11/06 15:59:06 by jfrancoi          #+#    #+#             */
+/*   Updated: 2023/11/25 13:39:19 by jfrancoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	ft_stars(unsigned int i, char *s)
-{
-	s[i] = '*';
-}*/
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	i;
-	size_t			n;
-
-	i = 0;
-	n = ft_strlen(s);
-	while (s[i] != '\0' && i < n)
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	if (lst == NULL)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	lst->next = NULL;
+	return (lst);
 }

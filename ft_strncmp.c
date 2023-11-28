@@ -29,13 +29,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-/*
-int	main(void)
-{
-	const char a[] = ".anlt";
-	const char b[] = "salnt";
-
-	printf("%d\n", strncmp(a, b, 0));
-	printf("%d", ft_strncmp(a, b, 0));
-	return (0);
-}*/

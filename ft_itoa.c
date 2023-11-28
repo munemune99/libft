@@ -79,14 +79,3 @@ char	*ft_itoa(int n)
 		str = ft_is_positive(str, n, len);
 	return (str);
 }
-/*
-   int	main(void)
-   {
-   int	n;
-
-   n = 2147483647;
-   printf("%s\n", ft_itoa(19));
-   printf("%s\n", ft_itoa(-2147483647LL));
-   printf("%s\n", ft_itoa(-0));
-   return (0);
-   }*/

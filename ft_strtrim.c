@@ -11,43 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-int	ft_is_in_s1(char const c, char const *set)
-{
-	int	y;
-
-	y = 0;
-	while (set[y] != '\0')
-	{
-		if (c == set[y])
-			return (1);
-		else
-			y++;
-	}
-	return (n);
-}
-
-int	ft_len(char const *s1, char const *set)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	len = 0;
-	while (s1[i] != '\0')
-	{
-		while (ft_is_in_s1(s1[i], set) == 1)
-			i++;
-		while (ft_is_in_s1(s1[i], set) == 0)
-		{
-			i++;
-			len++;
-		}
-		while (ft_is_in_s1(s1[i], set) == 1)
-			i++;
-	}
-	return (len);
-}*/
 
 static size_t	ft_until(char const *s1, size_t n, char const *set)
 {
@@ -121,12 +84,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, i, ((unsigned int)maxlen - i));
 	return (str);
 }
-/*
-int	main(void)
-{
-   char	*s1 = "grgrg";
-   char	*set = "";
-
-   printf("%s", ft_strtrim("   xxx   xxx", " x"));
-   return (0);
-}*/

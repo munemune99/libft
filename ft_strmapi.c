@@ -11,18 +11,12 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-char	c_to_a(unsigned int i, char c)
-{
-	c = 'c';
-	return (c);
-}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		len;
-	char	*str;
+	unsigned int	i;
+	size_t			len;
+	char			*str;
 
 	i = 0;
 	len = ft_strlen(s);
@@ -37,10 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	*s = "Salut gars !";
-	printf("%s", ft_strmapi(s, c_to_a));
-	return (0);
-}*/

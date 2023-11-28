@@ -31,11 +31,3 @@ char	*ft_strdup(const char *s)
 	s2[i] = '\0';
 	return (s2);
 }
-/*
-int	main(void)
-{
-	const char *s = "Salut gars";
-	printf("%s", ft_strdup(s));
-	printf("%s", strdup(s));
-	return (0);
-}*/

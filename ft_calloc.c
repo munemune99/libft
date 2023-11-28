@@ -20,6 +20,8 @@ void	*ft_calloc(size_t n, size_t size)
 	i = 0;
 	if ((n == 0) || (size == 0))
 		return (malloc (0));
+	if (SIZE_MAX / n < size)
+		return (NULL);
 	str = malloc(size * n);
 	if (str == NULL)
 		return (0);
@@ -30,10 +32,3 @@ void	*ft_calloc(size_t n, size_t size)
 	}
 	return (str);
 }
-/*
-int	main(void)
-{
-	printf("%p\n", ft_calloc(2, 2));
-	printf("%p", calloc(2, 2));
-	return (0);
-}*/

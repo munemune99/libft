@@ -25,11 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-int	main(void)
-{
-	char	buffer[12];
-
-	ft_bzero(buffer, 5);
-	return (0);
-}*/

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
@@ -22,13 +20,3 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-/*
-int	main(void)
-{
-	int	c;
-	c = 76;
-
-	printf("%d",toupper(c));
-	printf("%d",ft_toupper(c));
-	return (0);
-}*/

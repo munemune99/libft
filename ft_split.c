@@ -12,28 +12,22 @@
 
 #include "libft.h"
 
-/*char	*ft_nextword(char *s, char c, int i)
+static void	ft_freemalloc(char **tab, size_t n)
 {
-	if (i != 0 && s[i] != c)
-		i++;
-	while (s[i] == c)
-		i++;
-	return (&s[i]);
-}*/
+	size_t	i;
 
-static void	ft_freemalloc(char **tab, int n)
-{
-	while (n >= 0)
+	i = 0;
+	while (i < n)
 	{
-		free(tab[n]);
-		n--;
+		free(tab[i]);
+		i++;
 	}
 	free(tab);
 }
 
-static int	ft_strlength(char *s, char c)
+static size_t	ft_strlength(char *s, char c)
 {
-	int	x;
+	size_t	x;
 
 	x = 0;
 	while (s[x] == c)
@@ -45,11 +39,11 @@ static int	ft_strlength(char *s, char c)
 	return (x);
 }
 
-static int	count_words(char *s, char c)
+static size_t	count_words(char *s, char c)
 {
-	int	i;
-	int	count;
-	int	y;
+	size_t	i;
+	size_t	count;
+	size_t	y;
 
 	i = 0;
 	count = 0;
@@ -74,14 +68,17 @@ static int	count_words(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char		**tab;
-	int			i;
-	const int	j = count_words((char *)s, c);
+	size_t		i;
+	size_t		j;
 
 	i = 0;
+	if (!s)
+		return (NULL);
+	j = count_words((char *)s, c);
 	tab = ft_calloc(sizeof(char *), (j + 1));
 	if (!tab)
 		return (NULL);
-	while (i < j)
+	while ((size_t)i < j)
 	{
 		while (*s == c)
 			s++;
@@ -96,24 +93,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tab);
 }
-
-/*
-int	main(void)
-{
-	char const	*str = "    Salut gars ca va ! ";
-	int	i;
-	char	**tab;
-//	int	x;
-
-	i = 0;
-	tab = ft_split(str, ' ');
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		free (tab[i]);
-		i++;
-	}
-	free (tab);
-	return (0);
-}
-*/

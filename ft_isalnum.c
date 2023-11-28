@@ -20,13 +20,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*
-int	main(void)
-{
-	int	c;
-
-	c = 90;
-	printf("%d", ft_isalnum(c));
-	printf("%d", isalnum(c));
-	return (0);
-}*/
